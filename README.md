@@ -18,7 +18,7 @@
     ```
     $node demox.js dirName path
     ```
-      demo.sh  --脚本文件
+      demo.js  --脚本文件
       dirName  --需要创建的文件夹名称
       path     --指定创建文件夹的路径（相对路径与绝对路径都可以），默认路径是 当前路径 ./
 **2. 运行过程路径提示：** '当前执行环境路径' 、 'dirName文件夹创建路径'
@@ -30,7 +30,7 @@
 **5. 脚本功能：** 在**指定路径**创建指定 dir ,并初始化一些文件内容
            
 #### 脚本高级用法：
-  在 ~/.bashrc 中配置 export PATH="demox.ls所在文件夹的绝对路径:$PATH" 后可在命令行直接运行 
+  在 ~/.bashrc 中配置 export PATH="demox.js所在文件夹的绝对路径:$PATH" 后可在命令行直接运行 
   ```
   $ demox.js dirName path
   ```
