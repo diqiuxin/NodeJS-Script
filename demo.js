@@ -1,15 +1,15 @@
-#!/usr/bin/env node                                     //需要配置~/.bashrc才可生效
+#!/usr/bin/env node                                  //需要配置~/.bashrc才可生效
 
 console.log("----------in demo.js-----------");
-let fs = require('fs');
-let dirName = process.argv[2];
-let exit;
+let fs = require('fs');                             //加载文件模块
+let dirName = process.argv[2];                      //获取第一个参数 文件夹名称
+let exit;                                           //demox.js脚本退出变量返回值
 
-if(fs.existsSync('./' + dirName)){
-  console.log(dirName + '已经存在');
+if(fs.existsSync('./' + dirName)){                  //判断文件夹名在创建的路径中是否存在
+  console.log(dirName + '已经存在');                 //存在时，提示并退出
   exit = 1;
-}else{  
-  fs.mkdirSync('./' + dirName);
+}else{                                              //不存在时，开始创建index.html、style.css、main.js各文件
+  fs.mkdirSync('./' + dirName);                     //并分别写入指定的初始化内容
   process.chdir('./'+dirName);
   fs.mkdirSync('css');
   fs.mkdirSync('js');
@@ -22,9 +22,9 @@ if(fs.existsSync('./' + dirName)){
   fs.writeFileSync('./css/style.css',css);
   fs.writeFileSync('./js/main.js',js);
 
-  console.log('create $1 dir success :)');
+  console.log('create $1 dir success :)');          //创建成功提示信息
   exit = 0;
 }
 console.log("---------out demo.js-----------");
 
-process.exit(exit);
+process.exit(exit);                                 //脚本返回传参
