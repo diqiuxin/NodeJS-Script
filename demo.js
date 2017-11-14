@@ -14,9 +14,9 @@ if(fs.existsSync('./' + dirName)){                  //判断文件夹名在创�
   fs.mkdirSync('css');
   fs.mkdirSync('js');
 
-  const html = "<!DOCTYPE><title>Hello</title><h1>Hi</h1>",
+  const html = "<!DOCTYPE>\n<title>Hello</title>\n<h1>Hi</h1>",
         css = "h1{color: red;}",
-        js = "var string = 'Hello World';alert(string);";
+        js = "var string = 'Hello World';\nalert(string);";
 
   fs.writeFileSync('./index.html',html);
   fs.writeFileSync('./css/style.css',css);
